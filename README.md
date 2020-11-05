@@ -177,7 +177,10 @@ Thiago Miranda - [@thixmiranda](https://twitter.com/thixmiranda) - thiagomwd@gma
 
 Project Link: [https://github.com/thiagomwd/](https://github.com/thiagomwd/api_kapi)
 
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
 
+* [Deploy on Heroku](https://kapix.herokuapp.com/)
 
 
 
