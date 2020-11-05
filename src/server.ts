@@ -1,4 +1,4 @@
-import './config'
+import './config';
 import express from 'express';
 import routes from './routes';
 
