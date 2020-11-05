@@ -8,5 +8,5 @@ app.use(express.json());
 app.use(routes);
 
 
-
+console.log(`Listening on: ${port}`);
 app.listen(port);
