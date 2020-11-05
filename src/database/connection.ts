@@ -1,17 +1,18 @@
-import { createConnection } from 'typeorm';
+import { Db, MongoClient } from 'mongodb';
 
-createConnection({
-  logging: true,
-  synchronize: true,
-  useNewUrlParser: true,
-  type: "mongodb",
-  url: `mongodb+srv://kapi_admin:Kapidb#20202@kapidb0.lzxui.mongodb.net/kapidb?retryWrites=true&w=majority`,
-  ssl: true,
-  useUnifiedTopology: true
-}).then(async (connection) => {
-  console.log("Connection succesful");
-  console.log("Connection: ", connection);
-}).catch((error) => {
-  console.log("Connection failed");
-  console.log(error);
-});
+class Con {
+  uri = `${process.env.URI_DB}`;
+  db: Db;
+
+  /**
+   * Return a connection MongoClient
+   * @returns MongoClient
+   */
+  public async connect():Promise<Db> {
+    this.db = (await MongoClient.connect(this.uri, { useNewUrlParser: true, useUnifiedTopology: true })).db();
+    console.log("Connected to db");
+    return this.db;
+  }
+}
+
+export = new Con();
