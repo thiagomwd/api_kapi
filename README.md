@@ -173,7 +173,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Thiago Miranda - [@thixmiranda](https://twitter.com/thixmiranda) - thiagomwd@gmail.com
 
 Project Link: [https://github.com/thiagomwd/](https://github.com/thiagomwd/api_kapi)
 
@@ -184,16 +184,16 @@ Project Link: [https://github.com/thiagomwd/](https://github.com/thiagomwd/api_k
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/thiagomwd/repo.svg?style=flat-square
-[contributors-url]: https://github.com/thiagomwd/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/thiagomwd/repo.svg?style=flat-square
-[forks-url]: https://github.com/thiagomwd/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/thiagomwd/repo.svg?style=flat-square
-[stars-url]: https://github.com/thiagomwd/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=flat-square
-[issues-url]: https://github.com/thiagomwd/repo/issues
-[license-shield]: https://img.shields.io/github/license/thiagomwd/repo.svg?style=flat-square
-[license-url]: https://github.com/thiagomwd/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/thiagomwd/api_kapi.svg?style=flat-square
+[contributors-url]: https://github.com/thiagomwd/api_kapi/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/thiagomwd/api_kapi.svg?style=flat-square
+[forks-url]: https://github.com/thiagomwd/api_kapi/network/members
+[stars-shield]: https://img.shields.io/github/stars/thiagomwd/api_kapi.svg?style=flat-square
+[stars-url]: https://github.com/thiagomwd/api_kapi/stargazers
+[issues-shield]: https://img.shields.io/github/issues/thiagomwd/api_kapi.svg?style=flat-square
+[issues-url]: https://github.com/thiagomwd/api_kapi/issues
+[license-shield]: https://img.shields.io/github/license/thiagomwd/api_kapi.svg?style=flat-square
+[license-url]: https://github.com/thiagomwd/api_kapi/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/thiago-miranda-874a66b9
 [product-screenshot]: image/template.png
