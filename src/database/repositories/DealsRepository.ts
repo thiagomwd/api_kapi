@@ -2,6 +2,9 @@ import { InsertWriteOpResult } from 'mongodb';
 import Deal from '../../models/Deal';
 import Con from '../connection';
 
+/**
+ * Class DealsRepository, Responsible to database actions of deals
+ */
 export default class DealsRepository {  
   /**
    * Create a new deal
@@ -38,7 +41,6 @@ export default class DealsRepository {
     try {
       let db = await Con.connect();
       delete aggregation._id;
-      console.log(aggregation);
       let result = await db.collection('deals').updateOne({aggregation: true}, {$set : aggregation});
       return result;
     } catch (err) {

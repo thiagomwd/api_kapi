@@ -7,6 +7,19 @@ import BlingSerivce from "../services/BlingSerivce";
 import PipeDriveSerivce from "../services/PipeDriveSerivce";
 
 export default class DealBO {
+
+  getRepository() {
+    return new DealsRepository();
+  }
+
+  /**
+   * Return a aggregation struct of deals by day and value
+   * @param deal 
+   */
+  async getAggregation() {
+    return await this.getRepository().getDealAggregation();
+  }
+
   async create(deal: Deal) {
     const dealRepository = new DealsRepository();
     let created = await dealRepository.create(deal);
@@ -21,7 +34,7 @@ export default class DealBO {
     if(deals.length > 0) {
       let dealsSavedIds: any[] = [];
       const dealRepository = new DealsRepository();
-      let aggregation = await dealRepository.getDealAggregation();
+      let aggregation = await this.getAggregation();
       deals.forEach(deal => {
         const formatedDate = moment(deal.add_time).format('YYYY-MM-DD');
         aggregation[formatedDate] = aggregation[moment(deal.add_time).format('YYYY-MM-DD')] || {};
@@ -85,6 +98,11 @@ export default class DealBO {
     }
   }
 
+  /**
+   * Proccess a array of deal and filter it, based on a array of ids
+   * @param ids 
+   * @param deals 
+   */
   removeDealsSincronyzed(ids: any, deals:Deal[]): Deal[] {
     return deals.filter(deal => {
       return ids.findIndex((item:any) => item.id === deal.id ) === -1

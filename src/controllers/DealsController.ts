@@ -1,8 +1,12 @@
 import { Request, Response } from 'express';
 import DealBO from '../business/DealBO';
 import moment from 'moment';
+import Controller from './Controller';
 
-export default {
+/**
+ * Class DealsController, Responsable for deals requests
+ */
+class DealsController extends Controller {
   
   /**
    * To create a new deal, used by route POST /deals
@@ -14,15 +18,12 @@ export default {
       const deal = req.body;
       const dealBO = new DealBO();
       const created = await dealBO.create(deal);
-      return res.status(201).json({ message: created?.result.ok, lastId: created?.insertedId});
+      super.response201(res, created);
     } catch (err) {
-      return res.status(400).json({
-        request: false,
-        error:  err
-      });
+      super.error(res, err);
     }
     
-  },
+  }
 
   /**
    * To sync won pipedrive deals to bling orders
@@ -34,12 +35,27 @@ export default {
       const dealBO = new DealBO();
       const wonDeals = await dealBO.getWonDeals();
       const response = await dealBO.sync(wonDeals);
-      return res.json(response);
+      super.response(res, response);
     } catch (err) {
-      return res.status(400).json({
-        request: false,
-        error:  err
-      });
+      super.error(res, err);
     }
   }
+
+  /**
+   * To sync won pipedrive deals to bling orders
+   * @param req 
+   * @param res 
+   */
+  async getAggregation(req: Request, res: Response) {
+    try{
+      const dealBO = new DealBO();
+      const aggregation = await dealBO.getAggregation();
+      super.response(res, aggregation);
+    } catch (err) {
+      super.error(res, err);
+    }
+  }
+  
 }
+
+export default new DealsController();

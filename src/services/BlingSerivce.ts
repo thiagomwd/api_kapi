@@ -26,11 +26,8 @@ class BlingService{
             apikey : process.env.API_BLING_KEY,
             xml : xmlOrder
           }
-          console.log(requestBling);
           const savedOrderResponse = await axios.post(`${process.env.URL_BLING_API}/Api/v2/pedido/json/`, null,{ params : requestBling});
-          console.log(savedOrderResponse.data);
           if(savedOrderResponse.data.retorno.pedidos) {
-            console.log('ok ok ok ');
             orders.push(deal);
           }
         }catch(err) {
