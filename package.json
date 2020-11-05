@@ -20,9 +20,7 @@
   "scripts": {
     "dev": "export NODE_ENV=dev && ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "build" : "yarn install",
-    "start" : "tsc && node src/server.js",
-    "tsc": "tsc",
-    "postinstall": "npm run tsc"
+    "start" : "tsc && node src/server.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.8",
